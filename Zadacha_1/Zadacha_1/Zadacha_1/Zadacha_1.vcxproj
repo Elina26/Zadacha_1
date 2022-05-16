@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Zadacha_1.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="DynamicIntArray.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DynamicIntArray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
