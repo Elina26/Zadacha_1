@@ -102,6 +102,9 @@ int DynamicIntArray::length()
     return SIZE;
 }
 
+/*изменение размера (массив пересоздается, элементы копируются на новое место,
+старый массив разрушается; если новый размер меньше старого, не поместившаяся часть
+элементов теряется, если новый размер больше – добавляются элементы 0)*/
 void DynamicIntArray::resize(int newSIZE) {
     //сохраняем предыдущий массив в copy
     int* copy = new int[SIZE];
@@ -136,12 +139,6 @@ void DynamicIntArray::resize(int newSIZE) {
     delete[] copy;
 }
 
-/*изменение размера (массив пересоздается, элементы копируются на новое место,
-старый массив разрушается; если новый размер меньше старого, не поместившаяся часть
-элементов теряется, если новый размер больше – добавляются элементы 0)*/
-//void DynamicIntArray::resize(int newSIZE)
-
-
 bool operator==(DynamicIntArray& arr1, DynamicIntArray& arr2)
 {
     int c = 0;
@@ -152,7 +149,7 @@ bool operator==(DynamicIntArray& arr1, DynamicIntArray& arr2)
         if (c == arr1.SIZE) return true;
         else return false;
     }
-    else throw "Sizes are not the same!";
+    else throw "\nSizes are not the same!\n";
 }
 bool operator!=(DynamicIntArray& arr1, DynamicIntArray& arr2)
 {
